@@ -30,9 +30,9 @@ from VenusAPI import VenusAPI
 
 def main():
     parser = argparse.ArgumentParser(description='corrects nicknames via Starlink API')
-    parser.add_argument('-hi', '--hidden', type=bool, help='pull hidden current nicknames from local file', default=False)
-    parser.add_argument('-pu', '--push', type=bool, help='push recommended nickname updates to Starlink', default=False)
-    parser.add_argument('-re', '--report', type=bool, help='write report to csv file', default=True)
+    parser.add_argument('-hi', '--hidden', action='store_true', help='pull hidden current nicknames from local file')
+    parser.add_argument('-pu', '--push', action='store_true', help='push recommended nickname updates to Starlink')
+    parser.add_argument('-re', '--report', action='store_true', help='write report to csv file')
     parser.add_argument('-fi', '--filename', type=str, help='filename/path for report', default='nickname_updates.csv')
     args = parser.parse_args()
 
